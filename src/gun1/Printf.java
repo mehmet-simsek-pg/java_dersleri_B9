@@ -1,3 +1,5 @@
+package gun1;
+
 public class Printf {
     public static void main(String[] args) {
 
