@@ -17,14 +17,62 @@ public class TelefonNumarasiMaskeleme {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Telefon numarasi girin");
-        String telNo = scanner.nextLine().trim();
+        String telNo;
 
-        telNo = telNo
-                .replace(" ", "")
-                .replace("-","")
-                .replace("/","");
+        do {
+            System.out.println("Telefon numarasi girin");
+            telNo = scanner.nextLine().trim();
 
+            // bu islem sonucunde elimizde sadece sayilar kaldi
+            telNo = telNo
+                    .replace(" ", "")
+                    .replace("-","")
+                    .replace("/","");
 
+            // 0555-345-23-22 aradaki - leri sildikten sonra
+            // if ve while sadece sayilarin uzunluguna bakar
+            if (telNo.length() != 11) {
+                System.out.println("Tel no 11 haneli olmali");
+            }
+
+        } while (telNo.length() != 11);
+
+        // String ilkDortKarakter = telNo.substring(0, 4);
+        // degisken ismini istedigim gibi verebilrim
+        // dikkat edecegim kisim anlamli isimlendirme yapmak
+        String prefix = telNo.substring(0,4);
+
+        String operator;
+
+        switch (prefix) {
+            case "0555":
+                operator = "OperatörA";
+                break;
+            case "0533":
+                operator = "OperatörB";
+                break;
+            default:
+                operator = "Bilinmeyen operator";
+                break;
+        }
+
+        int count = 0;
+        for (int i = 0; i < telNo.length(); i++) {
+            if (telNo.charAt(i) == '5') {
+                count++;
+            }
+        }
+
+        System.out.println("Operator: " + operator);
+        System.out.println("Tel no icerisindeki 5 miktari: " + count);
+
+        if (count > 4) {
+            System.out.println("Cok fazla tekrar eden 5 var");
+        }
+
+        String masked = telNo.substring(0,4) + "****" + telNo.substring(8);
+        System.out.println("Masked tel no: " + masked);
+
+        scanner.close();
     }
 }
