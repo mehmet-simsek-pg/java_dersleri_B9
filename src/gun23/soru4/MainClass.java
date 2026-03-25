@@ -7,16 +7,24 @@ public class MainClass {
         /**
          * Kullanicidan 5 tane kitap bilgisi alin. Kitap sayfa
          * sayisi 200 den fazla olanlari ekrana yazdirin.
-         * Kitablarin yazarlarini ayrica yazdirin.
+         * Kitaplarin yazarlarini ayrica yazdirin.
          * */
 
         Scanner scanner = new Scanner(System.in);
-        Kitap[] kitap = new Kitap[3];
+        // icerisinde 5 tane Kitap bilgisi tutacak array tanimladik
+        Kitap[] kitap = new Kitap[5];
+        // new Kitap[5] dememizin sebebi 5 tane index olustursun
+        // eger bu indexler icin nesne olusturmazsam,
+        // baslangic default degerleri null olur.
+        // kitap[0] => null -> cünkü icerisinde nesne yok
+        // kitap[1] => null -> -> cünkü icerisinde nesne yok
+        // Kitap kitap = new Kitap();
 
         // 5 kitabin bilgilerini kullanicidan aldik
         for (int index = 0; index < kitap.length ; index++) {
             // array icerisindeki her bir eleman bir kitaptir.
             // bu yüzden önce o kitaptan bir nesne üretmek gerekir.
+            // bu satirin amaci her index e bir kitap nesnesi eklemek
             kitap[index] = new Kitap();
             System.out.print((index + 1) + ". kitap ismi: ");
             kitap[index].adi = scanner.nextLine().trim();
