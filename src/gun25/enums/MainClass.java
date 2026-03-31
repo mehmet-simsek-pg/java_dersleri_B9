@@ -2,11 +2,11 @@ package gun25.enums;
 
 public class MainClass {
     public static void main(String[] args) {
-        Gun bugun = Gun.SALI;
+        Gun bugun = Gun.CARSAMBA;
 
         System.out.println(bugun);
 
-        TrafikIsiklari isik = TrafikIsiklari.KIRMIZI;
+        TrafikIsiklari isik = TrafikIsiklari.YESIL;
 
         if (isik == TrafikIsiklari.KIRMIZI) {
             System.out.println("Dur");
@@ -34,7 +34,7 @@ public class MainClass {
         }
 
         System.out.println("-------------");
-        KahveBoyutu boyut = KahveBoyutu.ORTA;
+        KahveBoyutu boyut = KahveBoyutu.KUCUK;
 
         System.out.println("Secilen boyut: " + boyut);
         System.out.println("Fiyati: " + boyut.fiyat);
