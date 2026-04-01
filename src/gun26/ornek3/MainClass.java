@@ -14,6 +14,6 @@ public class MainClass {
         // ilk deger atamasindan sonra degeri degisitirilemez
         System.out.println("Barkod: " + urun.getBarkod());
         urun.setIsim("Bilgisayar");
-        System.out.println("Adi: "+ urun.getIsim());;
+        System.out.println("Adi: "+ urun.getIsim());
     }
 }
