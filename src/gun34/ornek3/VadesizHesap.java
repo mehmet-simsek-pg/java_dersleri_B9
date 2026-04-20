@@ -13,11 +13,11 @@ public class VadesizHesap extends Hesap{
         }
 
         if (miktar > bakiye) {
-            throw new RuntimeException("Yetersiz bakiye.");
+            throw new RuntimeException("Yetersiz bakiye. Güncel bakiye: " + bakiye);
         }
 
         bakiye -= miktar;
-        System.out.println(hesapNo + " hesabindan " + miktar + " cekilmistir.");
+        System.out.println(hesapNo + " vadesiz hesaptan " + miktar + " cekilmistir.");
         System.out.println("Güncel bakiye: " + bakiye);
     }
 
